@@ -9,7 +9,7 @@ description = "Catch memory leaks in ordinary tests: a trend-based assertion, no
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
-authors = [{name = "__AUTHOR__"}]
+authors = [{name = "pytest-leakcheck"}]
 keywords = ["pytest", "memory", "leak", "testing", "gc", "tracemalloc"]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -29,7 +29,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/__GH_OWNER__/pytest-leakcheck"
+Repository = "https://github.com/agentscope-ai-java/pytest-leakcheck"
 
 [project.entry-points.pytest11]
 leakcheck = "pytest_leakcheck.plugin"
