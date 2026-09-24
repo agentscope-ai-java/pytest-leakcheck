@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pytest-leakcheck"
+version = "0.1.0"
+description = "Catch memory leaks in ordinary tests: a trend-based assertion, not a single before/after diff."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [{name = "__AUTHOR__"}]
+keywords = ["pytest", "memory", "leak", "testing", "gc", "tracemalloc"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: Pytest",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Testing",
+    "Typing :: Typed",
+]
+dependencies = [
+    "pytest>=7",
+]
+
+[project.urls]
+Repository = "https://github.com/__GH_OWNER__/pytest-leakcheck"
+
+[project.entry-points.pytest11]
+leakcheck = "pytest_leakcheck.plugin"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7",
+    "mypy>=1.10",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pytest_leakcheck"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.mypy]
+strict = true
